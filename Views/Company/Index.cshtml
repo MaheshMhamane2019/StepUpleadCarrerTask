@@ -1,0 +1,91 @@
+﻿@model IEnumerable<StepUpLeadCareersTask.Models.Company>
+
+@{ ViewData["Title"] = "Index"; }
+<h4>Company Register</h4>
+<hr />
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanySize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobRole)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobDepartment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.UserIpAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserBrowserDetails)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserOsInfroamtion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LinkPageUrl)
+            </th>*@
+            <th>
+                <a asp-action="Add" class="btn btn-outline-success"><i class="far fa-plus-square"></i> Company</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LastName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CompanyName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CompanySize)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.JobRole)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.JobDepartment)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Phone)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Country)
+    </td>
+    <td>
+        <a asp-action="Add" asp-route-id="@item.CompanyId"><i class="fa fa-marker fa-lg"></i></a>
+        <a asp-action="Delete" asp-route-id="@item.CompanyId" class="text-danger ml-1" onclick="return confirm('Are you sure to delete this record?')"><i class="fa fa-trash-alt fa-lg"></i></a>
+    </td>
+        </tr>
+        }
+    </tbody>
+</table>
